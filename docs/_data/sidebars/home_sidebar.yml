@@ -10,7 +10,7 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Title
+      title: Basic Spark functions
       url: /spark_core
     - output: web,pdf
       title: Grundlagen von Sparks Dataframe
