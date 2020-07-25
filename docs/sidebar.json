@@ -1,6 +1,7 @@
 {
   "udemy_spark": {
     "Overview": "/",
-    "Title": "/df_basics_dbg"
+    "Title": "/spark_core",
+    "Grundlagen von Sparks Dataframe": "/df_basics_dbg"
   }
 }

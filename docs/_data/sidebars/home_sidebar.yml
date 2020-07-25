@@ -11,6 +11,9 @@ entries:
       url: /
     - output: web,pdf
       title: Title
+      url: /spark_core
+    - output: web,pdf
+      title: Grundlagen von Sparks Dataframe
       url: /df_basics_dbg
     output: web
     title: udemy_spark
