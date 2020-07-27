@@ -3,6 +3,6 @@
     "Overview": "/",
     "Basic Spark functions": "/spark_core",
     "Grundlagen von Sparks Dataframe": "/df_basics_dbg",
-    "Title": "/df_group_aggregate"
+    "Gruppieren und aggregieren": "/df_group_aggregate"
   }
 }

@@ -16,7 +16,7 @@ entries:
       title: Grundlagen von Sparks Dataframe
       url: /df_basics_dbg
     - output: web,pdf
-      title: Title
+      title: Gruppieren und aggregieren
       url: /df_group_aggregate
     output: web
     title: udemy_spark
