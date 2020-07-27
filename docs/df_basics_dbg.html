@@ -417,8 +417,8 @@ only showing top 2 rows
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;Close&lt;500&quot;</span><span class="p">)</span> <span class="c1"># Die Filter können wie Where-Klauseln von SQL Statements definiert werden</span>
-<span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;Close&lt;500&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;Close&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># filter gibt wieder ein DF zurück.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;Close&lt;500&quot;</span><span class="p">)</span> <span class="c1"># Die Filter kÃ¶nnen wie Where-Klauseln von SQL Statements definiert werden</span>
+<span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;Close&lt;500&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;Close&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># filter gibt wieder ein DF zurÃ¼ck.</span>
 </pre></div>
 
     </div>
@@ -465,7 +465,7 @@ only showing top 3 rows
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># standard Pandas Style</span>
 <span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s2">&quot;Close&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Achtung: die Klammern sind wichtig, anstelle von &#39;and&#39; und &#39;or&#39; &amp; und | verwenden</span>
-<span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s2">&quot;Close&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># ~ ist not Funktion: hier &quot;nicht grösser als 200&quot;</span>
+<span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s2">&quot;Close&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># ~ ist not Funktion: hier &quot;nicht grÃ¶sser als 200&quot;</span>
 </pre></div>
 
     </div>
@@ -559,8 +559,8 @@ only showing top 2 rows
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">asDict</span><span class="p">()</span> <span class="c1"># eine Row kann direkt als Dict zurückgegeben werden</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c1"># ¨über die Spalten in einer Row kann auch direkt iteriert werden</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">asDict</span><span class="p">()</span> <span class="c1"># eine Row kann direkt als Dict zurÃ¼ckgegeben werden</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c1"># Â¨Ã¼ber die Spalten in einer Row kann auch direkt iteriert werden</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; | &#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -635,7 +635,7 @@ only showing top 2 rows
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Registriere das Datenframe als vorübergehende SQL-Ansicht</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Registriere das Datenframe als vorÃ¼bergehende SQL-Ansicht</span>
 <span class="n">df_people</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s2">&quot;people&quot;</span><span class="p">)</span>
 </pre></div>
 
