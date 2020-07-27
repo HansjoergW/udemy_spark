@@ -27,6 +27,23 @@ sidebar: home_sidebar
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Gruppieren und aggregieren</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Init-Spark-Context">Init Spark Context<a class="anchor-link" href="#Init-Spark-Context"> </a></h2>
@@ -63,7 +80,7 @@ sidebar: home_sidebar
         <div>
             <p><b>SparkContext</b></p>
 
-            <p><a href="http://192.168.0.163:4043">Spark UI</a></p>
+            <p><a href="http://192.168.0.163:4042">Spark UI</a></p>
 
             <dl>
               <dt>Version</dt>
@@ -181,7 +198,7 @@ only showing top 3 rows
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_sales</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;Company&quot;</span><span class="p">)</span> <span class="c1"># gibt ein GroupedData objekt zurÃ¼ck http://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.GroupedData</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_sales</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;Company&quot;</span><span class="p">)</span> <span class="c1"># gibt ein GroupedData objekt zurück http://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.GroupedData</span>
 <span class="n">df_sales</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;Company&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># weitere Methoden count, max, min, sum</span>
 </pre></div>
 
