@@ -15,6 +15,9 @@ entries:
     - output: web,pdf
       title: Grundlagen von Sparks Dataframe
       url: /df_basics_dbg
+    - output: web,pdf
+      title: Title
+      url: /df_group_aggregate
     output: web
     title: udemy_spark
   output: web

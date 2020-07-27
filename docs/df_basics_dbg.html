@@ -63,7 +63,7 @@ sidebar: home_sidebar
         <div>
             <p><b>SparkContext</b></p>
 
-            <p><a href="http://192.168.0.163:4041">Spark UI</a></p>
+            <p><a href="http://192.168.0.163:4042">Spark UI</a></p>
 
             <dl>
               <dt>Version</dt>
@@ -100,8 +100,8 @@ sidebar: home_sidebar
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_people</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="s1">&#39;people.json&#39;</span><span class="p">)</span>
-<span class="n">df_apple</span>  <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s1">&#39;appl_stock.csv&#39;</span><span class="p">,</span><span class="n">inferSchema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_people</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="s1">&#39;data/people.json&#39;</span><span class="p">)</span>
+<span class="n">df_apple</span>  <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s1">&#39;data/appl_stock.csv&#39;</span><span class="p">,</span><span class="n">inferSchema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -188,7 +188,7 @@ root
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="p">(</span><span class="n">StructField</span><span class="p">,</span><span class="n">StringType</span><span class="p">,</span><span class="n">IntegerType</span><span class="p">,</span><span class="n">StructType</span><span class="p">)</span>
 <span class="n">data_schema</span> <span class="o">=</span> <span class="p">[</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">)]</span>
 <span class="n">final_struc</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">data_schema</span><span class="p">)</span>
-<span class="n">df_people</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="s1">&#39;people.json&#39;</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">final_struc</span><span class="p">)</span>
+<span class="n">df_people</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="s1">&#39;data/people.json&#39;</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">final_struc</span><span class="p">)</span>
 <span class="n">df_people</span><span class="o">.</span><span class="n">printSchema</span><span class="p">()</span>
 </pre></div>
 
@@ -417,8 +417,8 @@ only showing top 2 rows
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;Close&lt;500&quot;</span><span class="p">)</span> <span class="c1"># Die Filter können wie Where-Klauseln von SQL Statements definiert werden</span>
-<span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;Close&lt;500&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;Close&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># filter gibt wieder ein DF zurück.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;Close&lt;500&quot;</span><span class="p">)</span> <span class="c1"># Die Filter koennen wie Where-Klauseln von SQL Statements definiert werden</span>
+<span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;Close&lt;500&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;Close&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># filter gibt wieder ein DF zurueck.</span>
 </pre></div>
 
     </div>
@@ -465,7 +465,7 @@ only showing top 3 rows
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># standard Pandas Style</span>
 <span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s2">&quot;Close&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Achtung: die Klammern sind wichtig, anstelle von &#39;and&#39; und &#39;or&#39; &amp; und | verwenden</span>
-<span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s2">&quot;Close&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># ~ ist not Funktion: hier &quot;nicht grösser als 200&quot;</span>
+<span class="n">df_apple</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s2">&quot;Close&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">df_apple</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># ~ ist not Funktion: hier &quot;nicht groesser als 200&quot;</span>
 </pre></div>
 
     </div>
@@ -514,7 +514,7 @@ only showing top 2 rows
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="R&#252;ckgabe-als-Python-Objekte">R&#252;ckgabe als Python Objekte<a class="anchor-link" href="#R&#252;ckgabe-als-Python-Objekte"> </a></h3>
+<h3 id="Rueckgabe-als-Python-Objekte">Rueckgabe als Python Objekte<a class="anchor-link" href="#Rueckgabe-als-Python-Objekte"> </a></h3>
 </div>
 </div>
 </div>
@@ -559,8 +559,8 @@ only showing top 2 rows
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">asDict</span><span class="p">()</span> <span class="c1"># eine Row kann direkt als Dict zurückgegeben werden</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c1"># ¨über die Spalten in einer Row kann auch direkt iteriert werden</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">asDict</span><span class="p">())</span> <span class="c1"># eine Row kann direkt als Dict zurueckgegeben werden</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c1"># ueber die Spalten in einer Row kann auch direkt iteriert werden</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; | &#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -574,14 +574,8 @@ only showing top 2 rows
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>2010-01-22 00:00:00
-206.78000600000001
-207.499996
-197.16
-197.75
-220441900
-25.620401
-</pre>
+<pre>{&#39;Date&#39;: datetime.datetime(2010, 1, 22, 0, 0), &#39;Open&#39;: 206.78000600000001, &#39;High&#39;: 207.499996, &#39;Low&#39;: 197.16, &#39;Close&#39;: 197.75, &#39;Volume&#39;: 220441900, &#39;Adj Close&#39;: 25.620401}
+2010-01-22 00:00:00 | 206.78000600000001 | 207.499996 | 197.16 | 197.75 | 220441900 | 25.620401 | </pre>
 </div>
 </div>
 
@@ -635,7 +629,7 @@ only showing top 2 rows
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Registriere das Datenframe als vorübergehende SQL-Ansicht</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Registriere das Datenframe als voruebergehende SQL-Ansicht</span>
 <span class="n">df_people</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s2">&quot;people&quot;</span><span class="p">)</span>
 </pre></div>
 
